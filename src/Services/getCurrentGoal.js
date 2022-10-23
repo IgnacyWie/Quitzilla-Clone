@@ -8,6 +8,6 @@ export default function getCurrentGoal(difference) {
         suitableGoals.push(goal);
       }
     });
-    return (suitableGoals[0]);
+    return suitableGoals[0];
   }
 }
