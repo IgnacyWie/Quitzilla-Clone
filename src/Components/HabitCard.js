@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { FaLeaf } from "react-icons/fa";
 import getCurrentGoal from "../Services/getCurrentGoal";
 import getTimeSince from "../Services/getTimeSince";
+import { available_habits } from "../Views/AddView";
 import SampleIcon from "./SampleIcon";
 
 export default function HabitCard(props) {

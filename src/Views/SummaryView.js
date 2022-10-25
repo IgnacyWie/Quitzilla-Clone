@@ -1,7 +1,4 @@
 import HabitCard from "../Components/HabitCard";
-import AddIcon from "../Components/AddIcon";
-import MenuIcon from "../Components/MenuIcon";
-import SettingsIcon from "../Components/SettingsIcon";
 import { useEffect, useState } from "react";
 import supabase from "../Services/supabase";
 import TabBar from "../Components/TabBar";
@@ -9,13 +6,13 @@ import TabBar from "../Components/TabBar";
 export default function SummaryView() {
   const [habits, setHabits] = useState([]);
 
+  async function fetchHabits() {
+    const { data } = await supabase.from("habits").select();
+    setHabits(data);
+  }
+
   useEffect(() => {
-    async function test() {
-      const { data } = await supabase.from("habits").select();
-      console.log(data);
-      setHabits(data);
-    }
-    test();
+    fetchHabits();
   }, []);
 
   return (
